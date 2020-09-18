@@ -1,0 +1,14 @@
+boardTable
+
+create table profileimg (
+     id int(11) not null primary key AUTO_INCREMENT,
+     userid int(11) not null,
+    status int(11) not null
+    );
+
+
+
+
+
+
+

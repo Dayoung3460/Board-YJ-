@@ -1,0 +1,66 @@
+@media screen and (max-width: 300px) {
+    .login .login-content span.psw {
+       display: block;
+       float: none;
+    }
+    .login .login-content .cancelbtn {
+       width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 700px){
+    .signup .signup-content,
+    .login .login-content,
+    .upload .upload-content{
+       width: 250px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 745px){
+     .signup .signup-content .container > .form-control:nth-of-type(4){
+        margin-bottom: 2rem;
+     }
+  }
+  
+  @media screen and (max-width: 1020px){
+     .signup .signup-content .container > .form-control:nth-of-type(4){
+        margin-top: 1.7rem;
+    }
+     .main-container .detailPage{
+       width: 580px;
+    }
+  }
+  
+  @media screen and (max-width: 1130px) {
+     .main-container table{
+        table-layout: fixed; 
+        width: 780px;
+     }
+  
+     .main-container .main-top{
+        width: 780px;
+     }
+  
+     .main-container .pagination{
+        left: 18%;
+     }
+   }
+  
+   @media screen and (min-width: 1131px){
+     .main-container .main-top{
+        display: flex;
+        justify-content: space-between;
+     }
+   }
+  
+   @media screen and (max-width: 1400px){
+     .write .write-content,
+     .detailPage .detail-content{
+        width: 750px;
+     }
+   }
+
+
+    
+
