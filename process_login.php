@@ -1,16 +1,9 @@
 <?php
 
 
- 
-
-
-
-
-
-
-
 if(isset($_POST['login-submit'])){
     require 'dbconn.php';
+    global $mailuid;
     $mailuid = $_POST['mailuid'];
     $password = $_POST['pwd'];
 
@@ -42,12 +35,6 @@ if(isset($_POST['login-submit'])){
                     $_SESSION['id'] = 1;
 
                     
-
-
-
-
-
-
                     header("Location: index.php?login=success&user={$row['uidUsers']}");
                     exit();
                 }

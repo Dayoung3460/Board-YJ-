@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'header.php';
 ?>
 
@@ -19,6 +20,7 @@ require_once 'header.php';
                             $sql = "select * from board where id = {$filtered_id}";
                             $result = mysqli_query($conn, $sql);
                             $row = mysqli_fetch_array($result);
+                            
 
                             $article['title'] = htmlspecialchars($row['title']);
                             $article['content'] = htmlspecialchars($row['content']);

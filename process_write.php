@@ -40,7 +40,6 @@ $filtered = array(
     'title' => mysqli_real_escape_string($conn, $_POST['title']),
     'content' => mysqli_real_escape_string($conn, $_POST['content']),
     'subject_id' => mysqli_real_escape_string($conn, $_POST['subject_id'])
-    // 'file' => mysqli_real_escape_string($conn, $_POST['file'])
 );
 
 $sql = "insert into board (title, content, date, category)

@@ -11,7 +11,7 @@
         <title>Awesome People</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="./css/responsive.css">
         
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -51,10 +51,48 @@
                 <div class="sidebar-menu">
                     <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
                     <div class="profile">
-                        <img src="./image/person.jpg" alt="">
+                        <!-- <img src="./image/default.png" alt=""> -->
+
+
+
+
+
+
+                                            <?php
+                                                $sql = "select * from users where uidUsers = '".$_SESSION['userUid']."'";
+                                                $result = mysqli_query($conn, $sql);
+                                                
+                                                if(mysqli_num_rows($result)>0){
+                                                    while($row = mysqli_fetch_assoc($result)){
+                                                        $id = $row['idUsers'];
+                                                        // die($id);
+                                                        $sqlImg = "select * from profileimg where userid='$id' limit 1";
+                                                        $resultImg = mysqli_query($conn, $sqlImg);
+                                                        while($rowImg = mysqli_fetch_assoc($resultImg)){
+                                                             if($rowImg['status'] == 0){
+                                                                echo "<img src='upload_file/profile/profileUser".$id.".jfif?'".mt_rand().">";
+                                                             }else{
+                                                                 echo "<img src = 'image/default.png'>";
+                                                             }
+                                                             
+                                                        }
+                                                    }
+                                                } 
+                                            ?>
+
+
+
+
+
+
+
+
+
                         <p><?php
-                        if(isset($_SESSION['userId'])){
-                            echo $_GET['user'];
+                        if(!isset($_SESSION['userId'])){
+                            echo "user";
+                        } else {
+                            echo $_SESSION['userUid'];
                         }
                         ?></p>
                     </div>
@@ -73,30 +111,9 @@
                             <div class="sub-menu" id="sub-menu1">
                                 
                                     
+                                            
+                                            
                                             <?php
-
-                                                $sql = "select * from users";
-                                                $result = mysqli_query($conn, $sql);
-                                                if(mysqli_num_rows($result)>0){
-                                                    while($row = mysqli_fetch_assoc($result)){
-                                                        $id = $row['idUsers'];
-                                                        $sqlImg = "select * from profileimg where userid='$id'";
-                                                        $resultImg = mysqli_query($conn, $sqlImg);
-                                                        while($rowImg = mysqli_fetch_assoc($resultImg)){
-                                                            echo "<div>";
-                                                             if($rowImg['status'] == 0){
-                                                                echo "<img src='image/profile".$id.".jpg?'".mt_rand().">";
-                                                             }else{
-                                                                 echo "<img src = 'image/default.png'>";
-                                                             }
-                                                             echo $row['uidUsers'];
-                                                             echo "</div>";
-                                                        }
-                                                    }
-                                                } else{
-                                                    echo "There are no users yet!";
-                                                }
-
                                                 if(isset($_SESSION['id'])){
                                                     if($_SESSION['id'] == 1){
                                                     }
@@ -116,15 +133,15 @@
                                                                     <div class='file-name'>File name here</div>
                                                                 </div>
                                                                 <form class='uploadBtn' action='process_upload_image.php' method='post' enctype='multipart/form-data'>
-                                                                <a onclick='chooseImg()' class='chooseImg' style='padding: 10px;
-                                                                                                                margin-left: 35px;
-                                                                                                                color: black;
-                                                                                                                text-align: center;
-                                                                                                                border: none;'>
-                                                                    Choose a file
-                                                                </a>
-                                                                <input class='openFileBtn' type='file' name='file' hidden>
-                                                                <button class='uploadFinalBtn' type='submit' name='submitImg'>upload</button>
+                                                                    <a onclick='chooseImg()' class='chooseImg' style='padding: 10px;
+                                                                                                                    margin: 0 auto;
+                                                                                                                    color: black;
+                                                                                                                    text-align: center;
+                                                                                                                    border: none;'>
+                                                                        Choose a file
+                                                                    </a>
+                                                                     <input class='openFileBtn' type='file' name='file' hidden>
+                                                                    <button class='uploadFinalBtn' type='submit' name='submitImg'>upload</button>
                                                                 </form>
                                                             </div>
                                                         </div>";

@@ -280,6 +280,7 @@ html.body{
     color: whitesmoke;
     display: none;
     background: var(--primary-color);
+    text-align: center;
   }
 
 .upload .upload-content .uploadContainer.active:hover .file-name{
@@ -532,7 +533,6 @@ html.body{
     border: none;
 } 
 
-
 .detailPage .container button{
     width: 30%;
     padding: 10px;
@@ -625,14 +625,17 @@ html.body{
 
 .upload .upload-content .uploadBtn .uploadFinalBtn,
 .upload .upload-content .uploadBtn .chooseImg{
-    width: 80%;
-    margin-bottom: 20px;
-    padding: 10px;
-    margin-left: 35px;
+    width: 80%; 
+    margin-bottom: 20px; 
+    padding: 10px; 
     color: black;
     text-align: center;
     border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    
 }
+
 
 
 .signup .signup-content .container .signUpWith{
@@ -720,6 +723,7 @@ html.body{
     font-weight: 800;
     margin: 1rem;
     text-align: center;
+
 }
 
 .wrapper .sidebar .sidebar-menu .item .menu-btn{
@@ -781,7 +785,7 @@ html.body{
 .wrapper .main-container{
     /* width: (100% - 17rem); */
     margin-left: 17rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
     padding: 2rem;
     transition: 0.5s;
     /* height: 100vh; */
