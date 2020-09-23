@@ -16,7 +16,6 @@ if(isset($_POST['submitImg'])){
             // status = 1 means user has no profile pic
             $sql = "insert into profileimg (userid, status) values ('$userid', 1)";
             mysqli_query($conn, $sql);
-            
         }
     
     } else {

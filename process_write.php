@@ -1,10 +1,9 @@
 <?php
-
-
-
+session_start();
 require_once 'dbconn.php';
 
 if(isset($_POST['submit'])){
+
     $file = $_FILES['contentFile'];
     //$file: array -> key: name, type, tmp_name, error, size
     $fileName = $_FILES['contentFile']['name'];
@@ -12,27 +11,31 @@ if(isset($_POST['submit'])){
     $fileTmpName = $_FILES['contentFile']['tmp_name'];
     $fileError = $_FILES['contentFile']['error'];
     $fileSize = $_FILES['contentFile']['size'];
+    // die($fileName);
 
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
-    $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+    $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'jfif');
     
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
             if($fileSize < 1000000){
                 $fileNameNew = uniqid('', true).".".$fileActualExt;
-                
                 $fileDestination = 'upload_file/'.$fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
-                header('Location: index.php?postuploadsuccess');
+                global $fileNameNew;
+                $sql = "insert into board (filename) values ('$fileNameNew'); 
+                $result = mysqli_query($conn, $sql);
+
+                header('Location: index.php?postsuccess');
             } else{
-                echo "Your file is too big!";
+                echo 'Your file is too big!';
             }
         }else{
-            echo "There was an error uploading your file!";
+            echo 'There was an error uploading your file!';
         }
     } else{
-        echo "You cannot upload files of this type!";
+        echo 'You cannot upload files of this type!';
     }
 }
 
@@ -50,15 +53,16 @@ $sql = "insert into board (category, title, writer, content, date)
             '{$filtered['writer']}',
             '{$filtered['content']}',
             NOW()
-            )
+            ) where filename ='$fileNameNew';
         ";
 
  // die($sql);
 
 $result = mysqli_query($conn, $sql);
 
+
 if($result === false){
-    echo "Failed to upload a post. Talk to admin.";
+    echo 'Failed to upload a post. Talk to admin.';
     error_log(mysqli_error($conn));
 } else{
     header('Location: index.php');

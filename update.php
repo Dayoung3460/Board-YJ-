@@ -46,13 +46,10 @@ require_once 'header.php';
                             <?=$select_form?>
                             <label for="title"><b>Title</b></label>
                             <textarea class="title" name="title">
-                                <?=$article['title']?>
-                            </textarea>
+                         <?=$article['title']?></textarea>
                             <br>
                             <label for="content"><b>Content</b></label>
-                            <textarea class="content" name="content">
-                                <?=$article['content']?>
-                            </textarea>
+                            <textarea class="content" name="content"><?=$article['content']?></textarea>
                             <br>
                             <label for="image"><b>Image</b></label>
                             <div class="img"></div>

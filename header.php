@@ -111,11 +111,11 @@
                         ?></p>
                     </div>
                     <ul>
-                        <!-- <li class="item">
+                        <li class="item">
                             <a href="#" class="menu-btn">
                                 <i class="fas fa-desktop"></i><span>Board</span>
                             </a>
-                        </li> -->
+                        </li>
 
                         
                         <li class="item">
@@ -164,10 +164,10 @@
                                             ?>
                                                 
                                         
-                                <!-- <a href="#"><i class="fas fa-signature"></i><span>Name</span></a> -->
+                                <a href="#"><i class="fas fa-signature"></i><span>Name</span></a>
                             </div>
                         </li>
-                        <!-- <li class="item">
+                        <li class="item">
                             <a href="#sub-menu2" class="menu-btn">
                                 <i class="fas fa-envelope"></i><span>Message</span><i class="fas fa-chevron-down drop-down" id="down"></i>
                             </a>
@@ -176,8 +176,8 @@
                                 <a href="#"><i class="far fa-envelope-open"></i><span>Sent</span></a>
                                 <a href="#"><i class="fas fa-exclamation-triangle"></i><span>Spam</span></a>
                             </div>
-                        </li> -->
-                        <!-- <li class="item">
+                        </li>
+                        <li class="item">
                             <a href="#sub-menu3" class="menu-btn">
                                 <i class="fas fa-cog"></i><span>Setting</span><i class="fas fa-chevron-down drop-down" id="down"></i>
                             </a>
@@ -185,16 +185,16 @@
                                 <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
                                 <a href="#"><i class="fas fa-globe-asia"></i><span>Language</span></a>
                             </div>
-                        </li> -->
+                        </li>
                         
                             
                         
                         
-                        <!-- <li class="item">
+                        <li class="item">
                             <a href="#" class="menu-btn">
                                 <i class="fas fa-user"></i></i><span>Visits: </span>
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </div>

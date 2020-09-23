@@ -60,15 +60,10 @@ require_once 'header.php';
                                
                             </div>
                             <label for="title"><b>Title</b></label>
-                            <textarea class="title" readonly name="dPageTitle">
-                                [<?= $category ?>] <?=$article['title']?>
-                            </textarea>
-
+                            <textarea class="title" readonly name="dPageTitle" value=""><?="[".$category."]"."  ".$article['title']?></textarea>
                             <br>
                             <label for="content"><b>Content</b></label>
-                            <textarea class="content" readonly name="dPageContent">
-                                <?=$article['content']?>
-                            </textarea>
+                            <textarea class="content" readonly name="dPageContent"> <?=$article['content']?></textarea>
                             <br>
                             <label for="image"><b>Image</b></label>
                             <div class="img"></div>
