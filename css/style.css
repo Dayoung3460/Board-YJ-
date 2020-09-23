@@ -204,7 +204,7 @@ html.body{
     border-radius: 10px;
     background: whitesmoke;
     border: 2px dashed #c2cdda;
-    margin: 10% auto;
+    margin: 10% 10% 3% 10%;
 }
 
  .write-content .container .content .blockBox{
@@ -533,6 +533,10 @@ html.body{
     border: none;
 } 
 
+.upload .upload-content .uploadBtn{
+    margin-bottom: 8%;
+}
+
 .detailPage .container button{
     width: 30%;
     padding: 10px;
@@ -785,7 +789,7 @@ html.body{
 .wrapper .main-container{
     /* width: (100% - 17rem); */
     margin-left: 17rem;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     padding: 2rem;
     transition: 0.5s;
     /* height: 100vh; */
@@ -793,6 +797,10 @@ html.body{
     background: url(../image/los.jpg);
     background-size: cover;
     background-position: center;
+}
+
+.wrapper .dayAndDark{
+    background: black;
 }
 
 .wrapper .collapseSide{
@@ -807,6 +815,7 @@ html.body{
 .main-container .main-top{
     display: flex;
     margin-bottom: 2rem;
+    padding-top: 5rem;
 }
 
 .main-container .main-top2{
@@ -827,6 +836,10 @@ html.body{
     box-shadow: 4px 4px var(--primary-color2);
     cursor: pointer; 
 } 
+
+.main-container .darkModeBtn{
+    color: whitesmoke;
+}
 
 .main-container .mainTop-btn:hover{
     background: rgba(220,220,235,0.3);
@@ -904,19 +917,17 @@ html.body{
     cursor: pointer;
 }
 
-.main-container table .col-no,
-.main-container table .col-views,
-.main-container table .col-like{
+.main-container table .col-no{
     width: 7%;
 }
 
 .main-container table .col-title{
-    width: 35%;
+    width: 30%;
 }
 
 .main-container table .col-writer,
 .main-container table .col-category{
-    width: 12%;
+    width: 15%;
 }
 
 .main-container table .col-date{

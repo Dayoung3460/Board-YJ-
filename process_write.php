@@ -39,15 +39,17 @@ if(isset($_POST['submit'])){
 $filtered = array(
     'title' => mysqli_real_escape_string($conn, $_POST['title']),
     'content' => mysqli_real_escape_string($conn, $_POST['content']),
-    'subject_id' => mysqli_real_escape_string($conn, $_POST['subject_id'])
+    'subject_id' => mysqli_real_escape_string($conn, $_POST['subject_id']),
+    'writer' => mysqli_real_escape_string($conn, $_POST['writer'])
 );
 
-$sql = "insert into board (title, content, date, category)
+$sql = "insert into board (category, title, writer, content, date)
         values(
+            '{$filtered['subject_id']}',
             '{$filtered['title']}',
+            '{$filtered['writer']}',
             '{$filtered['content']}',
-            NOW(),
-            '{$filtered['subject_id']}'
+            NOW()
             )
         ";
 

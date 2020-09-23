@@ -32,7 +32,8 @@ if(isset($_POST['submitImg'])){
     
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
-    $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'jfif');
+    // $allowed = array('jpg', 'jpeg', 'png', 'jfif');
+    $allowed = array('jpg');
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
             if($fileSize < 5000000){
@@ -43,13 +44,16 @@ if(isset($_POST['submitImg'])){
                 $result = mysqli_query($conn, $sql);
                 header("Location: index.php?profileuploadsuccess");
             } else{
-                echo "Your file is too big!";
+                $message = "Your file is too big!";
+                echo "<script type='text/javascript'>alert('$message'); window.location.href='index.php';</script>";
             }
         }else{
-            echo "There was an error uploading your file!";
+            $message = "There was an error uploading your file!";
+            echo "<script type='text/javascript'>alert('$message'); window.location.href='index.php';</script>";
         }
     } else{
-        echo "Choose your profile picture. Or You cannot upload files of this type!";
+        $message = "Choose your profile picture. You can only upload jpg file.";
+        echo "<script type='text/javascript'>alert('$message'); window.location.href='index.php';</script>";
     }
 
     

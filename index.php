@@ -32,7 +32,6 @@ require_once 'header.php';
                         <th scope="col" class="col-title">Title</th>
                         <th scope="col" class="col-writer">Writer</th>
                         <th scope="col" class="col-date">Date</th>
-                        <th scope="col" class="col-views">Views</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -85,8 +84,7 @@ require_once 'header.php';
                                 'title' => htmlspecialchars($row['title']),
                                 'content' => htmlspecialchars($row['content']),
                                 'writer' => htmlspecialchars($row['writer']),
-                                'date' => htmlspecialchars($row['date']),
-                                'view' => htmlspecialchars($row['view'])
+                                'date' => htmlspecialchars($row['date'])
                             )
                     ?> 
 
@@ -98,7 +96,6 @@ require_once 'header.php';
                         </td>
                         <td class="tbl-writer"><?=$filtered['writer']?></td>
                         <td><?=$filtered['date']?></td>
-                        <td class="view"><?=$filtered['view']?></td>
                     </tr>
                             <?php endforeach; ?>
                     
@@ -116,6 +113,9 @@ require_once 'header.php';
                   
             </div>
 <script>
+
+
+
         const main = document.getElementById("myMain");
 const side = document.getElementById("mySidebar");
 

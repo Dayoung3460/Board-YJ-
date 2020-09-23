@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
         <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
-        <link rel="stylesheet" href="./css/responsive.css">
+        <link rel="stylesheet" href="./css/responsive.css?v=<?php echo time(); ?>">
         
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Russo+One&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
                             }
                         ?>
                         
-                        <li><a href="#" class="dark-mode"><i class="fas fa-moon"></i></a></li>
+                        <li><a href="#" class="dark-mode" id="dark-mode" onclick="darkMode()"><i class="fas fa-moon"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -59,25 +59,39 @@
 
 
                                             <?php
+                                            if(isset($_SESSION['userId'])){
                                                 $sql = "select * from users where uidUsers = '".$_SESSION['userUid']."'";
                                                 $result = mysqli_query($conn, $sql);
-                                                
+
                                                 if(mysqli_num_rows($result)>0){
                                                     while($row = mysqli_fetch_assoc($result)){
                                                         $id = $row['idUsers'];
-                                                        // die($id);
+                                                         
                                                         $sqlImg = "select * from profileimg where userid='$id' limit 1";
+                                                        
                                                         $resultImg = mysqli_query($conn, $sqlImg);
-                                                        while($rowImg = mysqli_fetch_assoc($resultImg)){
-                                                             if($rowImg['status'] == 0){
-                                                                echo "<img src='upload_file/profile/profileUser".$id.".jfif?'".mt_rand().">";
-                                                             }else{
-                                                                 echo "<img src = 'image/default.png'>";
-                                                             }
-                                                             
-                                                        }
+                                                        // var_dump($resultImg);
+                                                        if(mysqli_num_rows($resultImg)>0){
+                                                            while($rowImg = mysqli_fetch_assoc($resultImg)){
+                                                                if($rowImg['status'] == 0){
+                                                                   echo "<img src='upload_file/profile/profileUser".$id.".jpg?'".mt_rand().">";
+                                                                }else{
+                                                                    echo "<img src = 'image/default.png'>";
+                                                                }
+                                                                
+                                                           }
+                                                        }else{
+                                                            echo "<img src = 'image/default.png'>";
+                                                        } 
+                                                        
                                                     }
                                                 } 
+                                            } else{
+                                                echo "<img src = 'image/default.png'>";
+                                            }
+                                                
+                                                
+                                                
                                             ?>
 
 
@@ -97,11 +111,11 @@
                         ?></p>
                     </div>
                     <ul>
-                        <li class="item">
+                        <!-- <li class="item">
                             <a href="#" class="menu-btn">
                                 <i class="fas fa-desktop"></i><span>Board</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         
                         <li class="item">
@@ -128,7 +142,7 @@
                                                                     <div class='content'>
                                                                         <div class='icon'><i class='fas fa-file-image'></i></div>
                                                                             <div class='text'>No file chosen yet.</div>
-                                                                    </div>
+                                                                        </div>
                                                                     <div class='close uploadClose'>x</div>
                                                                     <div class='file-name'>File name here</div>
                                                                 </div>
@@ -140,21 +154,20 @@
                                                                                                                     border: none;'>
                                                                         Choose a file
                                                                     </a>
-                                                                     <input class='openFileBtn' type='file' name='file' hidden>
+                                                                      <input class='openFileBtn' type='file' name='file' hidden>
                                                                     <button class='uploadFinalBtn' type='submit' name='submitImg'>upload</button>
                                                                 </form>
                                                             </div>
                                                         </div>";
-                                                     
                                                 } 
                                             
                                             ?>
                                                 
                                         
-                                <a href="#"><i class="fas fa-signature"></i><span>Name</span></a>
+                                <!-- <a href="#"><i class="fas fa-signature"></i><span>Name</span></a> -->
                             </div>
                         </li>
-                        <li class="item">
+                        <!-- <li class="item">
                             <a href="#sub-menu2" class="menu-btn">
                                 <i class="fas fa-envelope"></i><span>Message</span><i class="fas fa-chevron-down drop-down" id="down"></i>
                             </a>
@@ -163,8 +176,8 @@
                                 <a href="#"><i class="far fa-envelope-open"></i><span>Sent</span></a>
                                 <a href="#"><i class="fas fa-exclamation-triangle"></i><span>Spam</span></a>
                             </div>
-                        </li>
-                        <li class="item">
+                        </li> -->
+                        <!-- <li class="item">
                             <a href="#sub-menu3" class="menu-btn">
                                 <i class="fas fa-cog"></i><span>Setting</span><i class="fas fa-chevron-down drop-down" id="down"></i>
                             </a>
@@ -172,21 +185,36 @@
                                 <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
                                 <a href="#"><i class="fas fa-globe-asia"></i><span>Language</span></a>
                             </div>
-                        </li>
+                        </li> -->
                         
                             
                         
                         
-                        <li class="item">
+                        <!-- <li class="item">
                             <a href="#" class="menu-btn">
                                 <i class="fas fa-user"></i></i><span>Visits: </span>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
 
 <script>
+    
+function darkMode() {
+    var x, i;
+   const body = document.querySelector('.wrapper .main-container');
+   x = document.querySelectorAll(".mainTop-btn");
+
+    for (i = 0; i < x.length; i++) {
+        x[i].classList.toggle("darkModeBtn");
+    }
+
+   body.classList.toggle("dayAndDark");
+}
+
+
+
     const upLoad = document.getElementById('upload');
     // const page = document.getElementById('pagination');
 //     const main = document.getElementById("myMain");

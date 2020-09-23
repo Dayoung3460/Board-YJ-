@@ -52,6 +52,7 @@ $select_form .= '</select>';
                                                 <img class="write_uploadImg" src="" alt="" width="100%" height="auto">
                                             </div>         
                                         </input>
+                                        <input type="hidden" name="writer" value="<?=$_SESSION['userUid']?>">
                                         <button class="writeBtn" type="submit" name="submit">Post</button>
                                     </div>
                                 </form>
