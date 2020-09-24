@@ -30,7 +30,17 @@
      .main-container .detailPage{
        width: 580px;
     }
+
+    
   }
+
+  @media screen and (min-width: 1020px){
+   .detailPage .container input{
+      float: left;
+      margin: .2em 12em;
+   }
+}
+
   
   @media screen and (max-width: 1130px) {
      .main-container table{

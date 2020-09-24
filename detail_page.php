@@ -11,9 +11,11 @@ require_once 'header.php';
                         
 
                         $article = array( 
+                            'category' => '',
                             'title' => '',
                             'content' => '',
-                            'category' => ''
+                            'filename' => '',
+                            'writer' => ''
                         );
 
                         $update_link = '';
@@ -29,9 +31,13 @@ require_once 'header.php';
                             $result = mysqli_query($conn, $sql);
                             $row = mysqli_fetch_array($result);
 
+                            $article['category'] = htmlspecialchars($row['category']);
                             $article['title'] = htmlspecialchars($row['title']);
                             $article['content'] = htmlspecialchars($row['content']);
-                            $article['category'] = htmlspecialchars($row['category']);
+                            $article['filename'] = htmlspecialchars($row['filename']);
+                            $article['writer'] = htmlspecialchars($row['writer']);
+
+                            $_SESSION['file'] = $article['filename'];
 
                             $update_link = '<a href="update.php?id=' . $_GET['id'] . '">Update</a>';
                             $delete_link = '
@@ -52,7 +58,8 @@ require_once 'header.php';
                             <div class="btnCon">
 
                             <?php
-                            if(isset($_SESSION['userId'])){
+                            
+                            if($_SESSION['userUid'] == $article['writer']){
                                 echo $update_link;
                                 echo $delete_link;
                             }
@@ -66,7 +73,9 @@ require_once 'header.php';
                             <textarea class="content" readonly name="dPageContent"> <?=$article['content']?></textarea>
                             <br>
                             <label for="image"><b>Image</b></label>
-                            <div class="img"></div>
+                            <div class="img">
+                                <img src="upload_file/<?=$article['filename']?>" alt="">
+                            </div>
                             <br>
                             <button class="writeBtn">
                                 <a href="index.php" style="text-decoration: none; color: var(--primary-color2); display: block;">Back</a>

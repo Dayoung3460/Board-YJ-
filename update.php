@@ -52,7 +52,12 @@ require_once 'header.php';
                             <textarea class="content" name="content"><?=$article['content']?></textarea>
                             <br>
                             <label for="image"><b>Image</b></label>
-                            <div class="img"></div>
+                            
+                            <input type="file" name="contentFile" class="changeImg">
+                                <div class="img changeImgDiv">
+                                    <img src="upload_file/<?=$_SESSION['file']?>" alt=""> 
+                                </div>
+                            </input>
                             <br>
                             <button class="writeBtn" type="submit">
                                 <a style="text-decoration: none; color: var(--primary-color2); display: block;">Update</a>

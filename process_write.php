@@ -23,11 +23,35 @@ if(isset($_POST['submit'])){
                 $fileNameNew = uniqid('', true).".".$fileActualExt;
                 $fileDestination = 'upload_file/'.$fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
-                global $fileNameNew;
-                $sql = "insert into board (filename) values ('$fileNameNew'); 
+                
+                $filtered = array(
+                    'title' => mysqli_real_escape_string($conn, $_POST['title']),
+                    'content' => mysqli_real_escape_string($conn, $_POST['content']),
+                    'subject_id' => mysqli_real_escape_string($conn, $_POST['subject_id']),
+                    'writer' => mysqli_real_escape_string($conn, $_POST['writer'])
+                );
+                
+                $sql = "insert into board (category, title, writer, content, date, filename)
+                        values(
+                            '{$filtered['subject_id']}',
+                            '{$filtered['title']}',
+                            '{$filtered['writer']}',
+                            '{$filtered['content']}',
+                            NOW(),
+                            '$fileNameNew'
+                            ) 
+                        ";
+
                 $result = mysqli_query($conn, $sql);
 
-                header('Location: index.php?postsuccess');
+                if($result === false){
+                    echo 'Failed to upload a post. Talk to admin.';
+                    error_log(mysqli_error($conn));
+                } else{
+                    header('Location: index.php?postsuccess');
+                }
+
+                
             } else{
                 echo 'Your file is too big!';
             }
@@ -39,33 +63,6 @@ if(isset($_POST['submit'])){
     }
 }
 
-$filtered = array(
-    'title' => mysqli_real_escape_string($conn, $_POST['title']),
-    'content' => mysqli_real_escape_string($conn, $_POST['content']),
-    'subject_id' => mysqli_real_escape_string($conn, $_POST['subject_id']),
-    'writer' => mysqli_real_escape_string($conn, $_POST['writer'])
-);
 
-$sql = "insert into board (category, title, writer, content, date)
-        values(
-            '{$filtered['subject_id']}',
-            '{$filtered['title']}',
-            '{$filtered['writer']}',
-            '{$filtered['content']}',
-            NOW()
-            ) where filename ='$fileNameNew';
-        ";
-
- // die($sql);
-
-$result = mysqli_query($conn, $sql);
-
-
-if($result === false){
-    echo 'Failed to upload a post. Talk to admin.';
-    error_log(mysqli_error($conn));
-} else{
-    header('Location: index.php');
-}
 
 ?>
