@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
-    $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'jfif');
+    $allowed = array('jpg', 'jpeg', 'png', 'jfif');
     
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
             echo 'There was an error uploading your file!';
         }
     } else{
-        echo 'You cannot upload files of this type!';
+        echo 'Upload a file or you cannot upload files of this type!';
     }
 }
 

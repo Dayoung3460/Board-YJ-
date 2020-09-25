@@ -59,20 +59,40 @@ require_once 'header.php';
                                 </div>
                             </input>
                             <br>
-                            <button class="writeBtn" type="submit">
-                                <a style="text-decoration: none; color: var(--primary-color2); display: block;">Update</a>
+                            <button class="writeBtn" type="submit" name="submit">
+                                <a>Update</a>
                             </button>
                         </form>
                     </div> 
                     </div> 
 <script>
-       const main = document.getElementById("myMain");
+const main = document.getElementById("myMain");
 const side = document.getElementById("mySidebar");
 
 function toggleSidebar(){
     main.classList.toggle("collapseMain");
     side.classList.toggle("collapseSide");
 }
+
+const changeImgDiv = document.querySelector('.changeImgDiv');
+const changeImg = document.querySelector('.changeImg');
+const image = document.querySelector('.changeImgDiv img');
+
+changeImg.addEventListener("change", function(){
+    const file = this.files[0];
+
+    if(file){
+    const reader = new FileReader();
+
+    reader.onload = function(){
+        const result = reader.result;
+        write_uploadImg.src = result;
+        image.classList.add("active");
+    }
+
+    reader.readAsDataURL(file);
+    }
+});
 </script>
 <?php
 

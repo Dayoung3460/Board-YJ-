@@ -1,7 +1,31 @@
 <?php
 // var_dump($_POST); 
-
+session_start();
 require_once 'dbconn.php';
+
+
+
+if(isset($_POST['submit'])){
+
+    $file = $_FILES['contentFile'];
+    //$file: array -> key: name, type, tmp_name, error, size
+    $fileName = $_FILES['contentFile']['name'];
+    $fileType = $_FILES['contentFile']['type'];
+    $fileTmpName = $_FILES['contentFile']['tmp_name'];
+    $fileError = $_FILES['contentFile']['error'];
+    $fileSize = $_FILES['contentFile']['size'];
+    
+
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg', 'jpeg', 'png', 'jfif');
+
+    if(in_array($fileActualExt, $allowed)){
+        if($fileError === 0){
+            if($fileSize < 1000000){
+                $fileNameNew = uniqid('', true).".".$fileActualExt;
+                $fileDestination = 'upload_file/'.$fileNameNew;
+                move_uploaded_file($fileTmpName, $fileDestination);
 
 settype($_POST['id'], 'integer');
 $filtered = array(
@@ -35,4 +59,16 @@ if($result === false){
 
 // echo $sql;
 
+}else{
+    echo 'Your file is too big!';
+}
+}else{
+echo 'There was an error uploading your file!';
+}
+} else{
+echo 'Upload a file or you cannot upload files of this type!';
+}
+}
+        
+    
 ?>

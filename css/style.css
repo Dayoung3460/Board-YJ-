@@ -194,6 +194,12 @@ html.body{
     resize: none;
 }
 
+.detailPage .container button a{
+    text-decoration: none; 
+    color: var(--primary-color2); 
+    display: block;
+}
+
 .write .write-content .container textarea{
     resize: none;
     margin-bottom: 10px;
@@ -304,8 +310,10 @@ html.body{
 }
 
 .login .login-content .imgcontainer .avatar {
-  width: 40%;
-  border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .detailPage .detailContainer{
@@ -436,13 +444,18 @@ html.body{
 }
 
 .detailPage .container .title{
-    width: 80%;
+    width: 60%;
     height: 40px;
     border: 1px solid var(--title-color);
     display: inline-flex;
-    margin: 0 0 5px 25px;
+    margin: 0 0 .5em 8.5em;
     padding: .5em .5em .5em 1.5em;
     font-size: 1rem;
+}
+
+.detailPage .container .readTitle{
+    width: 80%;
+    margin: 0 0 .5em 1.5em;
 }
 
 .login .login-content input,
@@ -597,6 +610,8 @@ html.body{
     font-size: 16px;
     cursor: pointer;
     outline:none;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .detailPage .container .btnCon a:first-child{
@@ -610,7 +625,7 @@ html.body{
 
 .detailPage .container select{
     position: absolute;
-    margin: 5px 0 5px 35px !important;
+    margin: .5em 0 .5em 1.5em !important;
 }
 
 .detailPage .container select,
@@ -683,6 +698,13 @@ html.body{
 .write .animate{
   -webkit-animation: animatezoom 0.5s;
   animation: animatezoom 0.5s
+}
+
+.login form .container p{
+    padding: 0 0 10px 25px;
+    color: var(--primary-color2);
+    font-size: 20px;
+    font-weight: 600;
 }
 
 @-webkit-keyframes animatezoom {
@@ -811,7 +833,7 @@ html.body{
     /* margin-top: 5rem; */
     padding: 2rem;
     transition: 0.5s;
-    height: 100vh;
+    /* height: 100vh; */
     /* height: 100%; */
     background: url(../image/los.jpg);
     background-size: cover;

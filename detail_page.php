@@ -43,7 +43,7 @@ require_once 'header.php';
                             $delete_link = '
                                 <form action="process_delete.php" method="post" onsubmit="if(!confirm(\'Are you sure to delete it?\')){return false;}">
                                     <input type="hidden" name="id" value="' . $_GET['id'] . '">
-                                    <input type="submit" value="Delete">
+                                    <input type="submit" value="Delete" class="deleteBtn">
                                 </form>
                             ';
                             $category = "{$article['category']}";
@@ -67,7 +67,7 @@ require_once 'header.php';
                                
                             </div>
                             <label for="title"><b>Title</b></label>
-                            <textarea class="title" readonly name="dPageTitle" value=""><?="[".$category."]"."  ".$article['title']?></textarea>
+                            <textarea class="title readTitle" readonly name="dPageTitle" value=""><?="[".$category."]"." ".$article['title']?></textarea>
                             <br>
                             <label for="content"><b>Content</b></label>
                             <textarea class="content" readonly name="dPageContent"> <?=$article['content']?></textarea>
