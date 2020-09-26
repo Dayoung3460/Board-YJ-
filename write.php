@@ -31,7 +31,7 @@ $select_form .= '</select>';
 <div id="write" class="write">
                                 <form action="process_write.php" method="post" class="write-content animate"
                                         enctype="multipart/form-data"
-                                         onsubmit = "if(!confirm('Are you sure to create this?')){return false;}">
+                                         onsubmit = "if(!confirm('Are you sure to post this?')){return false;}">
                                     <div class="writeContainer">
                                         <span><a class="close" onclick="closeWrite()">x</a></span>
                                         <img src="./image/writeBG.jpg" alt="writeImg" class="writeImg"></img>

@@ -36,8 +36,8 @@ if(isset($_POST['submitImg'])){
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
             if($fileSize < 5000000){
-                $fileNameNew = "profileUser".$userid.".".$fileActualExt;
-                $fileDestination = 'upload_file/profile/'.$fileNameNew;
+                $profileNameNew = "profileUser".$userid.".".$fileActualExt;
+                $fileDestination = 'upload_file/profile/'.$profileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 $sql = "update profileimg set status = 0 where userid = '$userid';";
                 $result = mysqli_query($conn, $sql);

@@ -59,15 +59,28 @@ require_once 'header.php';
 
                             <?php
                             
-                            if($_SESSION['userUid'] == $article['writer']){
+                            if(isset($_SESSION['userUid'])){
+                                if($_SESSION['userUid'] == $article['writer']){
                                 echo $update_link;
                                 echo $delete_link;
                             }
+                            }
+                            
                             ?>
                                
                             </div>
-                            <label for="title"><b>Title</b></label>
-                            <textarea class="title readTitle" readonly name="dPageTitle" value=""><?="[".$category."]"." ".$article['title']?></textarea>
+                            
+                            <label for="title"><b>Title</b>
+
+                            <?php 
+                                if($category != "category: "){
+                                    echo "<br>[".$category."]";
+                                } else {
+                                    echo "<br>[&emsp;&emsp;&nbsp;]";}
+                            ?>
+                            
+                            </label>
+                            <textarea class="title readTitle" readonly name="dPageTitle" value=""><?=$article['title']?></textarea>
                             <br>
                             <label for="content"><b>Content</b></label>
                             <textarea class="content" readonly name="dPageContent"> <?=$article['content']?></textarea>

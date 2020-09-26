@@ -40,25 +40,25 @@ require_once 'header.php';
                         <div class="detailContainer">
                             <p id="dPageTxt">see what others think</p>
                         </div>
-                        <form action="process_update.php" method="post" class="container" 
+                        <form action="process_update.php" method="post" class="container" enctype="multipart/form-data" 
                                 onsubmit="if(!confirm('Are you sure to update it?')){return false;}">
                             <input type="hidden" name = "id" value = "<?=$_GET['id']?>">
                             <?=$select_form?>
                             <label for="title"><b>Title</b></label>
-                            <textarea class="title" name="title">
-                         <?=$article['title']?></textarea>
+                            <textarea class="title" name="title"><?=$article['title']?></textarea>
                             <br>
                             <label for="content"><b>Content</b></label>
                             <textarea class="content" name="content"><?=$article['content']?></textarea>
                             <br>
                             <label for="image"><b>Image</b></label>
                             
-                            <input type="file" name="contentFile" class="changeImg">
+                            <input type="file" name="updateFile" class="changeImg" value="">
                                 <div class="img changeImgDiv">
                                     <img src="upload_file/<?=$_SESSION['file']?>" alt=""> 
                                 </div>
                             </input>
                             <br>
+                            
                             <button class="writeBtn" type="submit" name="submit">
                                 <a>Update</a>
                             </button>
@@ -86,8 +86,8 @@ changeImg.addEventListener("change", function(){
 
     reader.onload = function(){
         const result = reader.result;
-        write_uploadImg.src = result;
-        image.classList.add("active");
+        image.src = result;
+        changeImgDiv.classList.add("active");
     }
 
     reader.readAsDataURL(file);

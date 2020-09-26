@@ -5,15 +5,16 @@ require_once 'dbconn.php';
 
 
 
-if(isset($_POST['submit'])){
 
-    $file = $_FILES['contentFile'];
+if(isset($_POST['submit'])){
+    $file = $_FILES['updateFile'];
+    
     //$file: array -> key: name, type, tmp_name, error, size
-    $fileName = $_FILES['contentFile']['name'];
-    $fileType = $_FILES['contentFile']['type'];
-    $fileTmpName = $_FILES['contentFile']['tmp_name'];
-    $fileError = $_FILES['contentFile']['error'];
-    $fileSize = $_FILES['contentFile']['size'];
+    $fileName = $_FILES['updateFile']['name'];
+    $fileType = $_FILES['updateFile']['type'];
+    $fileTmpName = $_FILES['updateFile']['tmp_name'];
+    $fileError = $_FILES['updateFile']['error'];
+    $fileSize = $_FILES['updateFile']['size'];
     
 
     $fileExt = explode('.', $fileName);
@@ -39,7 +40,8 @@ $sql = "update board
         set 
             category = '{$filtered['category']}',
             title = '{$filtered['title']}',
-            content = '{$filtered['content']}'
+            content = '{$filtered['content']}',
+            filename = '$fileNameNew'
         where
             id = {$filtered['id']}
         ";

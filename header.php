@@ -74,7 +74,8 @@
                                                         if(mysqli_num_rows($resultImg)>0){
                                                             while($rowImg = mysqli_fetch_assoc($resultImg)){
                                                                 if($rowImg['status'] == 0){
-                                                                   echo "<img src='upload_file/profile/profileUser".$id.".jpg?'".mt_rand().">";
+                                                                //    echo "<img src='/upload_file/profile/profileUser".$id.".jpg'?".mt_rand().">";
+                                                                   echo "<img src='upload_file/profile/profileUser".$id.".jpg'>";
                                                                 }else{
                                                                     echo "<img src = 'image/default.png'>";
                                                                 }
@@ -93,13 +94,6 @@
                                                 
                                                 
                                             ?>
-
-
-
-
-
-
-
 
 
                         <p><?php

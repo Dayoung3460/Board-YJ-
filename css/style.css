@@ -455,7 +455,7 @@ html.body{
 
 .detailPage .container .readTitle{
     width: 80%;
-    margin: 0 0 .5em 1.5em;
+    margin: 0 0 .5em .5em;
 }
 
 .login .login-content input,
@@ -558,6 +558,12 @@ html.body{
     margin: 10px auto;
     background: var(--gradient-color);
     border: none;
+    
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
 } 
 
 .upload .upload-content .uploadBtn{
@@ -761,6 +767,7 @@ html.body{
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .wrapper .sidebar .sidebar-menu .profile p{
@@ -983,6 +990,7 @@ html.body{
 .main-container table .tbl-title a{
     text-decoration: none;
     cursor: pointer;
+    display: block;
 }
 
 .main-container .pagination {
@@ -1002,7 +1010,7 @@ html.body{
     
   }
 
- .main-container .pagination a.activePage {
+ /* .main-container .pagination a.activePage {
     background-color: var(--title-color);
     color: white;
     border-radius: 5px;
@@ -1011,7 +1019,7 @@ html.body{
  .main-container .pagination a:hover:not(.activePage) {
     background: rgba(220,220,235,0.5);
     border-radius: 5px;
-  } 
+  }  */
 
 
   footer {
