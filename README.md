@@ -1,6 +1,6 @@
 ### PHP Website
 
-[website](www.dayoung.42web.io)
+[website](http://www.dayoung.42web.io)
 
 * HTML
 * CSS
