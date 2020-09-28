@@ -62,7 +62,3 @@ if(isset($_POST['submit'])){
         echo 'Upload a file or you cannot upload files of this type!';
     }
 }
-
-
-
-?>

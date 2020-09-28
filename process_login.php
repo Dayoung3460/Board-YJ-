@@ -1,6 +1,5 @@
 <?php
 
-
 if(isset($_POST['login-submit'])){
     require 'dbconn.php';
     global $mailuid;
@@ -10,8 +9,7 @@ if(isset($_POST['login-submit'])){
     if(empty($mailuid) || empty($password)){
         header("Location: index.php?error=emptyfields");
         exit();
-    }
-    else{
+    }else {
         $sql = "select * from users where uidUsers=? or emailUsers=?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -33,8 +31,7 @@ if(isset($_POST['login-submit'])){
                     $_SESSION['userId']=$row['idUsers'];
                     $_SESSION['userUid']=$row['uidUsers'];
                     $_SESSION['id'] = 1;
-
-                    
+            
                     header("Location: index.php?login=success&user={$row['uidUsers']}");
                     exit();
                 }
@@ -51,13 +48,3 @@ else{
     header("Location: index.php");
     exit();
 }
-
-
-?>
-
-
-
-
-
-
-

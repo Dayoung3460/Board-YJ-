@@ -55,13 +55,4 @@ if(isset($_POST['submitImg'])){
         echo "<script type='text/javascript'>alert('$message'); window.location.href='index.php';</script>";
     }
 
-    
-
-    
-
-
-
-    
 }
-    
-?>

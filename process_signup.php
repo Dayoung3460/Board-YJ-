@@ -1,6 +1,5 @@
 <?php
     
-    
     if(isset($_POST['signup-submit'])){
         
         require 'dbconn.php';
@@ -9,7 +8,6 @@
         $password = $_POST['pwd'];
         $passwordRepeat = $_POST['pwd-repeat'];
 
-        
 
         // when all four blanks are empty
         if(empty($username)||empty($email)||empty($password)||empty($passwordRepeat)){ 
@@ -84,19 +82,8 @@
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
 
-       
-
-
     }
-        
-
-
-    
     else{
         header("Location: index.php");
         exit();
     }
-
-    
-
-?>

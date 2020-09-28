@@ -17,14 +17,15 @@
         </div>
     </form>
 </div>
+
 <script>
     const logIn = document.getElementById('id01');
 
-    function openLogin(){
-    logIn.style.display = 'block';
-}
+    function openLogin() {
+        logIn.style.display = 'block';
+    }
 
-function closeLogin(){
-    logIn.style.display = 'none';
-}
+    function closeLogin() {
+        logIn.style.display = 'none';
+    }
 </script>
