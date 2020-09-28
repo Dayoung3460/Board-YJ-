@@ -173,9 +173,12 @@ require_once 'dbconn.php';
                         </div>
                     </li>
                     <li class="item">
-                        <a href="#" class="menu-btn">
-                            <i class="fas fa-user"></i></i><span>Visits: </span>
+                        <a href="#sub-menu4" class="menu-btn">
+                            <i class="fas fa-cog"></i><span>Code</span><i class="fas fa-chevron-down drop-down" id="down"></i>
                         </a>
+                        <div class="sub-menu" id="sub-menu4">
+                            <a href="https://github.com/Dayoung3460/Board-YJ-.git" target="_blank" class="githubAddress"><span>https://github.com/Dayoung3460/Board-YJ-.git</span></a>
+                        </div>
                     </li>
                 </ul>
             </div>

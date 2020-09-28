@@ -1,366 +1,366 @@
-
-
-:root{
-    --primary-color: #1c2a83;
-    --primary-color2: #1b105c;
-    --title-color: #d3e958;
-    --border-color: #201f1f17;
-    --gradient-color: linear-gradient(90deg,  #899b4a 0%, #d3e958 100%);
-    --gradient-color2: linear-gradient(90deg,  #647eb1 0%, #102686 100%);
-    --box-shadow: 0px 10px 30px #48485034;
+:root {
+  --primary-color: #1c2a83;
+  --primary-color2: #1b105c;
+  --title-color: #d3e958;
+  --border-color: #201f1f17;
+  --gradient-color: linear-gradient(90deg, #899b4a 0%, #d3e958 100%);
+  --gradient-color2: linear-gradient(90deg, #647eb1 0%, #102686 100%);
+  --box-shadow: 0px 10px 30px #48485034;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-*, *::before, *::after{
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html.body{
-    margin: 0%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    background: whitesmoke;
+html.body {
+  margin: 0%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: whitesmoke;
 }
 
 /*=============== header / side menu ==================*/
 
-.wrapper .header{
-    z-index: 1;
-    background-color: var(--primary-color);
-    position: fixed;
-    width: calc(100% - 0%);
-    height: 5rem;
-    display: flex;
-    top: 0;
+.wrapper .header {
+  z-index: 1;
+  background-color: var(--primary-color);
+  position: fixed;
+  width: calc(100% - 0%);
+  height: 5rem;
+  display: flex;
+  top: 0;
 }
 
-.wrapper .header .header-menu{
-    width: calc(100% - 0%);
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0, 20rem;
+.wrapper .header .header-menu {
+  width: calc(100% - 0%);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0, 20rem;
 }
 
-.wrapper .header .header-menu .header-text{
-    position: absolute;
-    margin-left: 2rem;
+.wrapper .header .header-menu .header-text {
+  position: absolute;
+  margin-left: 2rem;
 }
 
-.wrapper .header .header-menu .header-text a{
-    text-decoration: none;
-    font: normal bold 40px/72px 'Roboto', sans-serif;
-    text-transform: uppercase;
-    color: var(--title-color);
+.wrapper .header .header-menu .header-text a {
+  text-decoration: none;
+  font: normal bold 40px/72px "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: var(--title-color);
 }
 
 /* login and signup btn */
-.button{
-    position: relative;
-    color: var(--primary-color);
-    font-weight: 850;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: .7rem 1.2rem;
-    margin: 1rem;
-    z-index: 1;
+.button {
+  position: relative;
+  color: var(--primary-color);
+  font-weight: 850;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  margin: 1rem;
+  z-index: 1;
 }
 
-.button::before{
-    content: ' ';
-    position: absolute;
-    top: 2px;
-    bottom: 2px;
-    left: 2px;
-    right: 2px; 
-    background: var(--title-color);
-    border: var(--primary-color) solid 3px;
-    z-index: -1;
-
+.button::before {
+  content: " ";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  background: var(--title-color);
+  border: var(--primary-color) solid 3px;
+  z-index: -1;
 }
 
-.button::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; 
-    background: #fff;
-    transform: rotate(0);
-    transition: transform .2s;
-    z-index: -2;
-
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: transform 0.2s;
+  z-index: -2;
 }
 
-.button:hover::after{
-    transform: rotate(-4deg) translate(1%, -5%);
+.button:hover::after {
+  transform: rotate(-4deg) translate(1%, -5%);
 }
 
-.wrapper .header .header-menu .openbtn{
-    color: whitesmoke;
-    position: relative; 
-    margin-left: 26rem;
-    font-size: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    transition-property: color;
+.wrapper .header .header-menu .openbtn {
+  color: whitesmoke;
+  position: relative;
+  margin-left: 26rem;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  transition-property: color;
 }
 
-.wrapper .header .header-menu ul{
-    display: flex;
+.wrapper .header .header-menu ul {
+  display: flex;
 }
 
-.wrapper .header .header-menu ul li a{
-    display: block;
+.wrapper .header .header-menu ul li a {
+  display: block;
 }
 
-.login, .signup, .upload, .write{
-    display: none;
-    position: fixed;
-    z-index: 4;
-    left: 0%;
-    top: 0%;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-    padding-top: 0px;
+.login,
+.signup,
+.upload,
+.write {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 0px;
 }
 
-.detailPage{
-    background: rgba(220,220,235,0.8);
-    margin: 10% auto;
-    width: 90%;
-    text-align: center;
-    padding-bottom: 70px;
+.detailPage {
+  background: rgba(220, 220, 235, 0.8);
+  margin: 10% auto;
+  width: 90%;
+  text-align: center;
+  padding-bottom: 70px;
 }
 
- .login .login-content,
- .signup .signup-content,
- .upload .upload-content,
- .write .write-content{
-    background-color: whitesmoke;
-    margin:100px auto;
-    border: 1px solid var(--primary-color2);
-    width: 40%;
+.login .login-content,
+.signup .signup-content,
+.upload .upload-content,
+.write .write-content {
+  background-color: whitesmoke;
+  margin: 100px auto;
+  border: 1px solid var(--primary-color2);
+  width: 40%;
 }
 
 .login .login-content .imgcontainer,
 .signup .signup-content .welcomecontainer,
-.upload .upload-content .uploadContainer
-.write .write-content .writeContainer
-{
-    text-align: center;
-    margin: 8% 0;
-    position: relative;
+.upload .upload-content .uploadContainer .write .write-content .writeContainer {
+  text-align: center;
+  margin: 8% 0;
+  position: relative;
 }
 
-.write .write-content .writeContainer{
-    text-align: center;
-    position: relative;
-    margin: 0;
-}  
-
-.write .write-content .writeContainer{
-    margin: 0;
-} 
-
-.detailPage .container .content{
-    width: 80%;
-    height: 200px;
-    border: 1px solid var(--title-color);
-    display: inline-flex;
-    margin-bottom: 5px;
-    padding: 1em;
-    font-size: 1rem;
+.write .write-content .writeContainer {
+  text-align: center;
+  position: relative;
+  margin: 0;
 }
 
-.detailPage .container textarea{
-    overflow-y: auto;
-    resize: none;
+.write .write-content .writeContainer {
+  margin: 0;
 }
 
-.detailPage .container button a{
-    text-decoration: none; 
-    color: var(--primary-color2); 
-    display: block;
+.detailPage .container .content {
+  width: 80%;
+  height: 200px;
+  border: 1px solid var(--title-color);
+  display: inline-flex;
+  margin-bottom: 5px;
+  padding: 1em;
+  font-size: 1rem;
 }
 
-.write .write-content .container textarea{
-    resize: none;
-    margin-bottom: 10px;
-}
-    
-.upload .upload-content .uploadContainer{
-    position: relative;
-    height: 300px;
-    width: 80%;
-    border-radius: 10px;
-    background: whitesmoke;
-    border: 2px dashed #c2cdda;
-    margin: 10% 10% 3% 10%;
+.detailPage .container textarea {
+  overflow-y: auto;
+  resize: none;
 }
 
- .write-content .container .content .blockBox{
-    height: 400px;
+.detailPage .container button a {
+  text-decoration: none;
+  color: var(--primary-color2);
+  display: block;
 }
 
+.write .write-content .container textarea {
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.upload .upload-content .uploadContainer {
+  position: relative;
+  height: 300px;
+  width: 80%;
+  border-radius: 10px;
+  background: whitesmoke;
+  border: 2px dashed #c2cdda;
+  margin: 10% 10% 3% 10%;
+}
+
+.write-content .container .content .blockBox {
+  height: 400px;
+}
 
 .upload .upload-content .uploadContainer .imgcontainer,
-.write .write-content .container .inputImg .write_imgcontainer{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.write .write-content .container .inputImg .write_imgcontainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.detailPage .container .img{
-    width: 80%;
-    height: 40%;
-    border: 1px solid var(--title-color);
-    display: inline-flex;
-    margin: 0 0 5px 11px;
+.detailPage .container .img {
+  width: 80%;
+  height: 40%;
+  border: 1px solid var(--title-color);
+  display: inline-flex;
+  margin: 0 0 5px 11px;
 }
 
-.detailPage .container .changeImgDiv{
-    margin: .5em 0 5px 5em;
+.detailPage .container .changeImgDiv {
+  margin: 0.5em 0 5px 5em;
 }
 
-.detailPage .container .img img{
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
+.detailPage .container .img img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
 }
 
-.upload .upload-content .uploadContainer .imgcontainer img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
-.upload .upload-content .uploadContainer .content{
-    margin-top: 50px;
-    justify-items: center;
-    display: grid;
+.upload .upload-content .uploadContainer .imgcontainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-.upload .upload-content .uploadContainer .content .icon{
-    font-size: 100px;
-    color: var(--primary-color2);
-  }
-
-.upload .upload-content .uploadContainer .content .text{
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--primary-color2);
+.upload .upload-content .uploadContainer .content {
+  margin-top: 50px;
+  justify-items: center;
+  display: grid;
 }
 
-.upload .upload-content .uploadContainer .uploadClose{
-    position: absolute;
-    right: 15px;
-    top: 0;
-    color: var(--primary-color);
-    font-size: 35px;
-    font-weight: bold;
-    display: none;
+.upload .upload-content .uploadContainer .content .icon {
+  font-size: 100px;
+  color: var(--primary-color2);
 }
 
-.upload .upload-content .uploadContainer.active{
-    border: none !important;
+.upload .upload-content .uploadContainer .content .text {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary-color2);
 }
 
-.upload .upload-content .uploadContainer.active:hover .uploadClose{
-    display: block;
+.upload .upload-content .uploadContainer .uploadClose {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  color: var(--primary-color);
+  font-size: 35px;
+  font-weight: bold;
+  display: none;
 }
 
-.upload .upload-content .uploadContainer .file-name{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    padding: 8px 0;
-    font-size: 18px;
-    color: whitesmoke;
-    display: none;
-    background: var(--primary-color);
-    text-align: center;
-  }
-
-.upload .upload-content .uploadContainer.active:hover .file-name{
-    display: block;
+.upload .upload-content .uploadContainer.active {
+  border: none !important;
 }
 
-.signup .signup-content .welcomecontainer{
-    margin: 8% 0 3% 0;
+.upload .upload-content .uploadContainer.active:hover .uploadClose {
+  display: block;
+}
+
+.upload .upload-content .uploadContainer .file-name {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: whitesmoke;
+  display: none;
+  background: var(--primary-color);
+  text-align: center;
+}
+
+.upload .upload-content .uploadContainer.active:hover .file-name {
+  display: block;
+}
+
+.signup .signup-content .welcomecontainer {
+  margin: 8% 0 3% 0;
 }
 
 .login .login-content .imgcontainer .avatar {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.detailPage .detailContainer{
-    text-align: center;
-    padding-top: 10px;
+.detailPage .detailContainer {
+  text-align: center;
+  padding-top: 10px;
 }
 
-.write .write-content .writeContainer img{
-    width: 100%;
+.write .write-content .writeContainer img {
+  width: 100%;
 }
 
-
-.signup .signup-content .welcomecontainer div{
-    justify-content: center;
-    font: bold 1.5rem/55px 'Roboto', sans-serif;
-    color: var(--primary-color2);
-    padding: 15px;
-    text-transform: uppercase;
+.signup .signup-content .welcomecontainer div {
+  justify-content: center;
+  font: bold 1.5rem/55px "Roboto", sans-serif;
+  color: var(--primary-color2);
+  padding: 15px;
+  text-transform: uppercase;
 }
 
-
-.write .write-content .writeContainer p{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font: normal 2rem/3rem 'Russo One', sans-serif;
-    color: var(--title-color);
-    padding: 15px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 0px var(--primary-color), -2px -2px 0px  var(--primary-color), 2px -2px 0px  var(--primary-color), -2px 2px 0px  var(--primary-color);
+.write .write-content .writeContainer p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: normal 2rem/3rem "Russo One", sans-serif;
+  color: var(--title-color);
+  padding: 15px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px var(--primary-color),
+    -2px -2px 0px var(--primary-color), 2px -2px 0px var(--primary-color),
+    -2px 2px 0px var(--primary-color);
 }
 
-.detailPage .detailContainer p{
-    position: relative;
-    left: 3%;
-    font: normal 2rem/3rem 'Russo One', sans-serif;
-    color: var(--title-color);
-    padding: 15px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 0px var(--primary-color), -2px -2px 0px  var(--primary-color), 2px -2px 0px  var(--primary-color), -2px 2px 0px  var(--primary-color);
+.detailPage .detailContainer p {
+  position: relative;
+  left: 3%;
+  font: normal 2rem/3rem "Russo One", sans-serif;
+  color: var(--title-color);
+  padding: 15px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px var(--primary-color),
+    -2px -2px 0px var(--primary-color), 2px -2px 0px var(--primary-color),
+    -2px 2px 0px var(--primary-color);
 }
 
-.signup .signup-content .welcomecontainer p{
-    font: normal bold 2rem 'Roboto', sans-serif;
-    text-transform: uppercase;
-    color: var(--title-color);
+.signup .signup-content .welcomecontainer p {
+  font: normal bold 2rem "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: var(--title-color);
 }
 
 .login .login-content .imgcontainer .close,
@@ -376,24 +376,24 @@ html.body{
   z-index: 1;
 }
 
-.write .write-content .writeContainer .close{
-    right: 5% !important;
+.write .write-content .writeContainer .close {
+  right: 5% !important;
 }
 
 .upload .upload-content span .close {
-    display: block !important;
-    position: relative !important;
-    text-decoration: none !important;
-    font-size: 35px !important;
-    padding: 0 20px 0 0 !important;
-    margin: 0px !important;
-    border: none !important;
-    transition: 0 !important;
-    float: right !important;
-    padding-right: 10px !important;
-    color: var(--primary-color) !important;
-    font-weight: bold;
-    z-index: 1;
+  display: block !important;
+  position: relative !important;
+  text-decoration: none !important;
+  font-size: 35px !important;
+  padding: 0 20px 0 0 !important;
+  margin: 0px !important;
+  border: none !important;
+  transition: 0 !important;
+  float: right !important;
+  padding-right: 10px !important;
+  color: var(--primary-color) !important;
+  font-weight: bold;
+  z-index: 1;
 }
 
 .login .login-content .imgcontainer .close:hover,
@@ -405,35 +405,36 @@ html.body{
 .upload .upload-content .uploadContainer .close:hover,
 .upload .upload-content .uploadContainer .close:focus,
 .write .write-content .writeContainer .close:hover,
-.write .write-content .writeContainer .close:focus{
+.write .write-content .writeContainer .close:focus {
   color: red !important;
   cursor: pointer;
 }
 
 .login .login-content .container,
 .signup .signup-content .container,
-.write .write-content .container{
+.write .write-content .container {
   padding: 16px;
   margin: 30px;
 }
 
-.detailPage .container label{
-    float: left;
-    padding-left: 20px;
+.detailPage .container label {
+  float: left;
+  padding-left: 20px;
 }
 
-.signup .signup-content .container{
-    margin-top: 0px !important;
+.signup .signup-content .container {
+  margin-top: 0px !important;
 }
 
-.signup .signup-content .container p{
-    text-align: center;
+.signup .signup-content .container p {
+  text-align: center;
 }
 
-
-.login .login-content input[type=text], input[type=password],
-.signup .signup-content .container .form-control input[type=text], input[type=password],
-.write .write-content .container input[type=text]{
+.login .login-content input[type="text"],
+input[type="password"],
+.signup .signup-content .container .form-control input[type="text"],
+input[type="password"],
+.write .write-content .container input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -443,574 +444,584 @@ html.body{
   font-size: 1rem;
 }
 
-.detailPage .container .title{
-    width: 60%;
-    height: 40px;
-    border: 1px solid var(--title-color);
-    display: inline-flex;
-    margin: 0 0 .5em 8.5em;
-    padding: .5em .5em .5em 1.5em;
-    font-size: 1rem;
+.detailPage .container .title {
+  width: 60%;
+  height: 40px;
+  border: 1px solid var(--title-color);
+  display: inline-flex;
+  margin: 0 0 0.5em 8.5em;
+  padding: 0.5em 0.5em 0.5em 1.5em;
+  font-size: 1rem;
 }
 
-.detailPage .container .readTitle{
-    width: 80%;
-    margin: 0 0 .5em .5em;
+.detailPage .container .readTitle {
+  width: 80%;
+  margin: 0 0 0.5em 0.5em;
 }
 
 .login .login-content input,
 .signup .signup-content .container .form-control input,
 .write .write-content .container input,
 .detailPage .container div,
-.detailPage .container textarea{
-    border-radius: 4px;
+.detailPage .container textarea {
+  border-radius: 4px;
 }
 
-.signup .signup-content .container .success input{
-    border-color: #2ecc71 !important;
+.signup .signup-content .container .success input {
+  border-color: #2ecc71 !important;
 }
 
-.signup .signup-content .container .error input{
-    border-color: #e74c3c !important;
+.signup .signup-content .container .error input {
+  border-color: #e74c3c !important;
 }
 
-.signup .signup-content .container .form-control{
-    position: relative;
-    margin-bottom: 1.2rem;
+.signup .signup-content .container .form-control {
+  position: relative;
+  margin-bottom: 1.2rem;
 }
 
-.signup .signup-content .container .form-control i{
-	visibility: hidden;
-	position: absolute;
-	top: 40px;
-	right: 10px;
+.signup .signup-content .container .form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
 }
 
 .signup .signup-content .container .error i.fa-exclamation-circle {
-	color: #e74c3c;
-	visibility: visible;
+  color: #e74c3c;
+  visibility: visible;
 }
 
 .signup .signup-content .container .success i.fa-check-circle {
-	color: #2ecc71;
-	visibility: visible;
+  color: #2ecc71;
+  visibility: visible;
 }
 
 .signup .signup-content .container .form-control small {
-	color: #e74c3c;
-	position: absolute;
-	bottom: 0;
-    left: 0;
-    top: 75px;
-	visibility: hidden;
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 75px;
+  visibility: hidden;
 }
 
 .signup .signup-content .container .error small {
-	visibility: visible;
+  visibility: visible;
 }
 
-.write .write-content .container .content{
-    width: 100%;
-    height: 300px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    overflow: auto;
-    background: white;
+.write .write-content .container .content {
+  width: 100%;
+  height: 300px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  overflow: auto;
+  background: white;
 }
 
-.detailPage .container div{
-    width: 100%;
-    height: 300px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    font-size: 16px;
-    background: white;
+.detailPage .container div {
+  width: 100%;
+  height: 300px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  background: white;
 }
 
-.write .write-content .container .inputImg{
-    margin: 10px;
+.write .write-content .container .inputImg {
+  margin: 10px;
 }
 
-.write .write-content .container .write_imgcontainer{
-    width: 100%;
-    /* height: 30%; */
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    overflow: auto;
-    background: white;
+.write .write-content .container .write_imgcontainer {
+  width: 100%;
+  /* height: 30%; */
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  overflow: auto;
+  background: white;
 }
 
 .login .login-content .loginbtn,
 .signup .signup-content .container .signUpBtn,
 .upload .upload-content .uploadBtn .uploadFinalBtn,
 .upload .upload-content .uploadBtn .chooseImg,
-.write .write-content .container .writeBtn{
-    width: 90%;
-    display: block;
-    padding: 10px;
-    margin: 10px auto;
-    background: var(--gradient-color);
-    border: none;
-    
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: .3em;
-    text-transform: uppercase;
-} 
+.write .write-content .container .writeBtn {
+  width: 90%;
+  display: block;
+  padding: 10px;
+  margin: 10px auto;
+  background: var(--gradient-color);
+  border: none;
 
-.upload .upload-content .uploadBtn{
-    margin-bottom: 8%;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 
-.detailPage .container button{
-    width: 30%;
-    padding: 10px;
-    margin: 10px 10% 10px 0;
-    background: var(--gradient-color);
-    border: none;
-    border-radius: 5px;
-    float: right;
+.upload .upload-content .uploadBtn {
+  margin-bottom: 8%;
 }
 
-.detailPage .container button a{
-    font-size: 16px;
+.detailPage .container button {
+  width: 30%;
+  padding: 10px;
+  margin: 10px 10% 10px 0;
+  background: var(--gradient-color);
+  border: none;
+  border-radius: 5px;
+  float: right;
 }
 
-.detailPage .container .btnCon{
-    display: flex;
-    justify-content: flex-end;
-    width: 90%;
-    height: 45px;
-    padding: 10px;
-    margin: 3% 5%;
-    box-sizing: border-box;
-    font-size: 16px;
-    background: none;
-    border: none;
+.detailPage .container button a {
+  font-size: 16px;
+}
+
+.detailPage .container .btnCon {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  height: 45px;
+  padding: 10px;
+  margin: 3% 5%;
+  box-sizing: border-box;
+  font-size: 16px;
+  background: none;
+  border: none;
 }
 
 .detailPage .container .btnCon a,
-.detailPage .container .btnCon form{
-    background: var(--gradient-color);
-    width: 20%;
-    padding: 10px;
-    border: none;
-    text-decoration: none;
-    color: var(--primary-color2);
-    border: none;
-    height: fit-content;
-    border-radius: 5px;
+.detailPage .container .btnCon form {
+  background: var(--gradient-color);
+  width: 20%;
+  padding: 10px;
+  border: none;
+  text-decoration: none;
+  color: var(--primary-color2);
+  border: none;
+  height: fit-content;
+  border-radius: 5px;
 }
 
-.detailPage .container .btnCon form input[type=submit]{
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    outline:none;
-    margin: 0 auto;
-    width: 100%;
+.detailPage .container .btnCon form input[type="submit"] {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.detailPage .container .btnCon a:first-child{
-    margin-right: 5%;
+.detailPage .container .btnCon a:first-child {
+  margin-right: 5%;
 }
 
-.write-content .container .content{
-    overflow-y: scroll;
-    overflow-wrap: anywhere;
+.write-content .container .content {
+  overflow-y: scroll;
+  overflow-wrap: anywhere;
 }
 
-.detailPage .container select{
-    position: absolute;
-    margin: .5em 0 .5em 1.5em !important;
+.detailPage .container select {
+  position: absolute;
+  margin: 0.5em 0 0.5em 1.5em !important;
 }
 
 .detailPage .container select,
-.write-content .container select{
-    margin-left: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--primary-color);
-    background-color: var(--title-color);
-    line-height: 1.3;
-    padding: .2em .5em;
-    max-width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #aaa;
-    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    border-radius: .5em;
+.write-content .container select {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  background-color: var(--title-color);
+  line-height: 1.3;
+  padding: 0.2em 0.5em;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
 }
 
 .detailPage .container select:hover,
 .write-content .container select:hover {
-    border-color: #888;
+  border-color: #888;
 }
 
 .detailPage .container select option,
-.write-content .container select option{
-    color: var(--primary-color2);
-    background-color: whitesmoke;
-    font-size: 15px;
+.write-content .container select option {
+  color: var(--primary-color2);
+  background-color: whitesmoke;
+  font-size: 15px;
 }
 
-.detailPage .container input{
-    float: left;
-    margin: .2em 2.5em;
+.detailPage .container input {
+  float: left;
+  margin: 0.2em 2.5em;
 }
 
 .upload .upload-content .uploadBtn .uploadFinalBtn,
-.upload .upload-content .uploadBtn .chooseImg{
-    width: 80%; 
-    margin-bottom: 20px; 
-    padding: 10px; 
-    color: black;
-    text-align: center;
-    border: none;
-    text-transform: uppercase;
-    font-weight: 600;
-    
+.upload .upload-content .uploadBtn .chooseImg {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: black;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-
-
-.signup .signup-content .container .signUpWith{
-    background: var(--gradient-color2);
-    color: whitesmoke;
+.signup .signup-content .container .signUpWith {
+  background: var(--gradient-color2);
+  color: whitesmoke;
 }
 
 .login .login-content .psw {
   float: right;
   margin: 5px;
-  
 }
 
-.login .login-content .forgotPsw{
-     text-decoration: none;
-     color: var(--primary-color);
+.login .login-content .forgotPsw {
+  text-decoration: none;
+  color: var(--primary-color);
 }
 
 .login .animate,
 .signup .animate,
 .upload .animate,
-.write .animate{
+.write .animate {
   -webkit-animation: animatezoom 0.5s;
-  animation: animatezoom 0.5s
+  animation: animatezoom 0.5s;
 }
 
-.login form .container p{
-    padding: 0 0 10px 25px;
-    color: var(--primary-color2);
-    font-size: 20px;
-    font-weight: 600;
+.login form .container p {
+  padding: 0 0 10px 25px;
+  color: var(--primary-color2);
+  font-size: 20px;
+  font-weight: 600;
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-} 
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 
-
-.wrapper .header .header-menu ul li .dark-mode{
-    font-size: 35px;
-    text-align: center;
-    color: var(--title-color);
-    margin: 1rem 1.7rem;
-    transition: 0.3s;
-    transition-property: color;
+.wrapper .header .header-menu ul li .dark-mode {
+  font-size: 35px;
+  text-align: center;
+  color: var(--title-color);
+  margin: 1rem 1.7rem;
+  transition: 0.3s;
+  transition-property: color;
 }
 
 /*======================= side bar====================== */
 
-.wrapper .sidebar{
-    background: var(--primary-color2);
-    position: fixed;
-    top: 5rem;
-    width: 17rem;
-    height: 100vh;
-    transition: 0.5s;
-    transition-property: width;
-    overflow-y: auto;
+.wrapper .sidebar {
+  background: var(--primary-color2);
+  position: fixed;
+  top: 5rem;
+  width: 17rem;
+  height: 100vh;
+  transition: 0.5s;
+  transition-property: width;
+  overflow-y: auto;
 }
 
 .wrapper .sidebar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-.wrapper .sidebar .sidebar-menu{
-    overflow: hidden;
+.wrapper .sidebar .sidebar-menu {
+  overflow: hidden;
 }
 
-.wrapper .sidebar .sidebar-menu .closebtn{
-    float: right;
-    margin-right: 10px;
-    font-size: 40px;
-    text-decoration: none;
-    color: whitesmoke;
+.wrapper .sidebar .sidebar-menu .closebtn {
+  float: right;
+  margin-right: 10px;
+  font-size: 40px;
+  text-decoration: none;
+  color: whitesmoke;
 }
 
-.wrapper .sidebar .sidebar-menu .profile img{
-    margin: 0rem 4rem;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+.wrapper .sidebar .sidebar-menu .profile img {
+  margin: 0rem 4rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.wrapper .sidebar .sidebar-menu .profile p{
-    color: var(--title-color);
-    font-weight: 800;
-    margin: 1rem;
-    text-align: center;
-
+.wrapper .sidebar .sidebar-menu .profile p {
+  color: var(--title-color);
+  font-weight: 800;
+  margin: 1rem;
+  text-align: center;
 }
 
-.wrapper .sidebar .sidebar-menu .item .menu-btn{
-    display: block;
-    color: var(--title-color);
-    position: relative;
-    padding: 20px 20px;
-    transition: 0.3s;
-    transition-property: color;
-    text-decoration: none;
+.wrapper .sidebar .sidebar-menu .item .menu-btn {
+  display: block;
+  color: var(--title-color);
+  position: relative;
+  padding: 20px 20px;
+  transition: 0.3s;
+  transition-property: color;
+  text-decoration: none;
 }
 
-.wrapper .sidebar .sidebar-menu .item .menu-btn i{
-    margin-right: 15px;
+.wrapper .sidebar .sidebar-menu .item .menu-btn i {
+  margin-right: 15px;
 }
 
-.wrapper .sidebar .sidebar-menu .item .menu-btn .drop-down{
-    float: right;
-    font-size: 12px;
-    margin-top: 8px;
+.wrapper .sidebar .sidebar-menu .item .menu-btn .drop-down {
+  float: right;
+  font-size: 12px;
+  margin-top: 8px;
 }
 
-.wrapper .sidebar .sidebar-menu .item .sub-menu{
-    background-color: var(--primary-color);
-    overflow: hidden;
-    transition: 0.3s;
-    max-height: 0;
-    transition-property: background, max-height;
+.wrapper .sidebar .sidebar-menu .item .sub-menu {
+  background-color: var(--primary-color);
+  overflow: hidden;
+  transition: 0.3s;
+  max-height: 0;
+  transition-property: background, max-height;
 }
 
-.wrapper .sidebar .sidebar-menu .item .sub-menu a{
-    display: block;
-    position: relative;
-    color: whitesmoke;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 20px;
-    margin-left: 20px;
-    border-bottom: 1px solid var(--primary-color2);
-    transition: .3s;
-    transition: background;
-    
+.wrapper .sidebar .sidebar-menu .item .sub-menu a {
+  display: block;
+  position: relative;
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 20px;
+  margin-left: 20px;
+  border-bottom: 1px solid var(--primary-color2);
+  transition: 0.3s;
+  transition: background;
 }
 
-.wrapper .sidebar .sidebar-menu .item .sub-menu i{
-    margin-right: 13px;
+.wrapper .sidebar .sidebar-menu .item .sub-menu .githubAddress {
+  margin-left: 0;
+  padding: 0.5em;
+  text-align: center;
 }
 
-.wrapper .sidebar .sidebar-menu .item .sub-menu a:hover{
-    transform: scale(1.1);
+.wrapper .sidebar .sidebar-menu .item .sub-menu .githubAddress span {
+  font-size: 0.7rem;
 }
 
-.wrapper .sidebar .sidebar-menu .item .sub-menu:target{
-    max-height: 200px;
+.wrapper .sidebar .sidebar-menu .item .sub-menu i {
+  margin-right: 13px;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu a:hover {
+  transform: scale(1.1);
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu:target {
+  max-height: 200px;
 }
 
 /* ======================main container===================== */
 
-.wrapper .main-container{
-    /* width: (100% - 17rem); */
-    margin-left: 17rem;
-    /* margin-top: 5rem; */
-    padding: 2rem;
-    transition: 0.5s;
-    /* height: 100vh; */
-    height: 100%;
-    background: url(../image/los.jpg);
-    background-size: cover;
-    background-position: center;
+.wrapper .main-container {
+  /* width: (100% - 17rem); */
+  margin-left: 17rem;
+  /* margin-top: 5rem; */
+  padding: 2rem;
+  transition: 0.5s;
+  /* height: 100vh; */
+  height: 100%;
+  background: url(../image/los.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-.wrapper .dayAndDark{
-    background: black;
+.wrapper .dayAndDark {
+  background: black;
 }
 
-.wrapper .collapseSide{
-    width: 0rem;
+.wrapper .collapseSide {
+  width: 0rem;
 }
 
-.wrapper .collapseMain{
-    width: (100% - 0px);
-    margin-left: 0px;
+.wrapper .collapseMain {
+  width: (100% - 0px);
+  margin-left: 0px;
 }
 
-.main-container .main-top{
-    display: flex;
-    margin-bottom: 2rem;
-    padding-top: 5rem;
+.main-container .main-top {
+  display: flex;
+  margin-bottom: 2rem;
+  padding-top: 5rem;
 }
 
-.main-container .main-top2{
-    display: flex;
+.main-container .main-top2 {
+  display: flex;
 }
 
-.main-container .mainTop-btn{
-    width: 145px;
-    padding: 10px;
-    margin: 10px;
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    font-size: 16px;
-    font-weight: 700;
-    outline: none !important;
-    transition: .1s all ease;
-    border-radius: 5%;
-    box-shadow: 4px 4px var(--primary-color2);
-    cursor: pointer; 
-} 
-
-.main-container .darkModeBtn{
-    color: whitesmoke;
+.main-container .mainTop-btn {
+  width: 145px;
+  padding: 10px;
+  margin: 10px;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  font-size: 16px;
+  font-weight: 700;
+  outline: none !important;
+  transition: 0.1s all ease;
+  border-radius: 5%;
+  box-shadow: 4px 4px var(--primary-color2);
+  cursor: pointer;
 }
 
-.main-container .mainTop-btn:hover{
-    background: rgba(220,220,235,0.3);
-    transform: translateY(2px);
+.main-container .darkModeBtn {
+  color: whitesmoke;
+}
+
+.main-container .mainTop-btn:hover {
+  background: rgba(220, 220, 235, 0.3);
+  transform: translateY(2px);
 }
 
 .main-container .main-top .search {
-    width: 300px;
-    display: flex;
-    margin: 7px 10px 0 10px;
-  }
+  width: 300px;
+  display: flex;
+  margin: 7px 10px 0 10px;
+}
 
-  .main-container .main-top .search .searchTerm {
-    width: 100%;
-    background: var(--gradient-color);
-    margin: 10px auto;
-    padding: 5px;
-    height: 65%;
-    border-radius: 5px 0 0 5px;
-    border-width:0px;
-    font-size: 16px;
-  }
+.main-container .main-top .search .searchTerm {
+  width: 100%;
+  background: var(--gradient-color);
+  margin: 10px auto;
+  padding: 5px;
+  height: 65%;
+  border-radius: 5px 0 0 5px;
+  border-width: 0px;
+  font-size: 16px;
+}
 
-  .main-container .main-top .search .searchTerm:focus{
-    color: var(--primary-color);
-    outline: none !important;
-  }
-  
-  .main-container .main-top .search .searchButton {
-    margin: 10px auto;
-    width: 40px;
-    height: 65%;
-    background: var(--primary-color2);
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-    border-width:0px;
-  }
+.main-container .main-top .search .searchTerm:focus {
+  color: var(--primary-color);
+  outline: none !important;
+}
 
-  .main-container .main-top .search .searchButton:focus{
-    outline: none !important;
-  }
+.main-container .main-top .search .searchButton {
+  margin: 10px auto;
+  width: 40px;
+  height: 65%;
+  background: var(--primary-color2);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  border-width: 0px;
+}
 
- .main-container table{
-    width: 100%;
-    border-collapse: collapse;
-  }
+.main-container .main-top .search .searchButton:focus {
+  outline: none !important;
+}
 
- .main-container table thead{
-    background-color: whitesmoke;
-  }
+.main-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
- .main-container table tbody{
-    background: rgba(220,220,235,0.8);
-  }
+.main-container table thead {
+  background-color: whitesmoke;
+}
 
- .main-container table th,
- .main-container table td {
-  padding: .6em;
+.main-container table tbody {
+  background: rgba(220, 220, 235, 0.8);
+}
+
+.main-container table th,
+.main-container table td {
+  padding: 0.6em;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
   border: 1px solid #d2d6f1;
 }
 
-.main-container table .tbl-title{
-    text-align: left;
-    /* width: 20%; */
+.main-container table .tbl-title {
+  text-align: left;
+  /* width: 20%; */
 }
 
-.main-container table .tbl-title:hover{
-    cursor: pointer;
+.main-container table .tbl-title:hover {
+  cursor: pointer;
 }
 
-.main-container table .col-no{
-    width: 7%;
+.main-container table .col-no {
+  width: 7%;
 }
 
-.main-container table .col-title{
-    width: 30%;
+.main-container table .col-title {
+  width: 30%;
 }
 
 .main-container table .col-writer,
-.main-container table .col-category{
-    width: 15%;
+.main-container table .col-category {
+  width: 15%;
 }
 
-.main-container table .col-date{
-    width: auto;
+.main-container table .col-date {
+  width: auto;
 }
 
 .main-container table .tbl-title,
-.main-container table .tbl-writer{
-    font-size: 18px;
+.main-container table .tbl-writer {
+  font-size: 18px;
 }
 
-.main-container table .tbl-title a{
-    text-decoration: none;
-    cursor: pointer;
-    display: block;
+.main-container table .tbl-title a {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
 }
 
 .main-container .pagination {
-    position: relative;
-    margin: 2rem;
-    display: inline-flex;
-    left: 35%;
-  }
+  position: relative;
+  margin: 2rem;
+  display: inline-flex;
+  left: 35%;
+}
 
 .main-container .pagination a {
-    color: white;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    position: relative;
-    margin: .3rem;
-    
-  }
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  position: relative;
+  margin: 0.3rem;
+}
 
- /* .main-container .pagination a.activePage {
+/* .main-container .pagination a.activePage {
     background-color: var(--title-color);
     color: white;
     border-radius: 5px;
@@ -1021,22 +1032,12 @@ html.body{
     border-radius: 5px;
   }  */
 
-
-  footer {
-    text-align: center;
-    color: whitesmoke;
-    padding: 2px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-  }
-
-
-
-
-
-
-
-
-
+footer {
+  text-align: center;
+  color: whitesmoke;
+  padding: 2px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+}

@@ -16,7 +16,7 @@ create table profileimg (
 
 infinityFree
 https://app.infinityfree.net/accounts/epiz_26803955
-dayoung.42web.io
+www.dayoung.42web.io
 
 FTP Username	epiz_26803955
 FTP Password   s35rVT1Yp0G
