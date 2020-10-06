@@ -24,4 +24,4 @@
 <img src="image/screenshot_update&delete.png" width="450" height="400">
 
 #### ★ Upload Profile Image
-<img src="image/screenshot_profile.jpg" width="500" height="400">
+<img src="image/screenshot_profile.jpg" width="700" height="400">
