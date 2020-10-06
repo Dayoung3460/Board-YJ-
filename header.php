@@ -44,7 +44,7 @@ require_once 'dbconn.php';
 
                     ?>
 
-                    <li><a href="#" class="dark-mode" id="dark-mode" onclick="darkMode()"><i class="fas fa-moon"></i></a></li>
+                    <li><a href="#" class="dark-mode" id="dark-mode"><i class="fas fa-moon"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -185,50 +185,13 @@ require_once 'dbconn.php';
         </div>
 
         <script>
-            function darkMode() {
-                var x, i;
-                const body = document.querySelector('.wrapper .main-container');
-                x = document.querySelectorAll(".mainTop-btn");
-
-                for (i = 0; i < x.length; i++) {
-                    x[i].classList.toggle("darkModeBtn");
-                }
-
-                body.classList.toggle("dayAndDark");
-            }
-
-
-
+            'use strict'
             const upLoad = document.getElementById('upload');
-            // const page = document.getElementById('pagination');
-            //     const main = document.getElementById("myMain");
-            // const side = document.getElementById("mySidebar");
-
-            function toggleSidebar() {
-                main.classList.toggle("collapseMain");
-                side.classList.toggle("collapseSide");
-            }
-
-            function openUploadImg() {
-                upLoad.style.display = 'block';
-                // page.style.zIndex = '-1';
-            }
-
-            function closeUploadImg() {
-                upLoad.style.display = 'none';
-                // page.style.zIndex = '0';
-            }
-
-
-
+            const openFileBtn = document.querySelector('.openFileBtn');
             const uploadContainer = document.querySelector('.uploadContainer');
             const fileName = document.querySelector('.file-name');
-            const openFileBtn = document.querySelector('.openFileBtn');
             const uploadClose = document.querySelector('.uploadClose');
             const uploadImg = document.querySelector('.uploadImg');
-
-
-
             let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
             function chooseImg() {
@@ -260,4 +223,36 @@ require_once 'dbconn.php';
                     fileName.textContent = valueStore;
                 }
             });
+
+            darkBtn.addEventListener('click', ()=>{
+                setDarkMode = localStorage.getItem('dark');
+
+                if(setDarkMode !== "on"){
+                    darkMode();
+                    setDarkMode = localStorage.setItem('dark', 'on');
+                } else{
+                    darkMode();
+                    setDarkMode = localStorage.setItem('dark', null);
+                }
+            });
+
+            // Check dark mode is on or off on page reload
+            if(setDarkMode === 'on'){
+                darkMode();
+            }
+
+            function toggleSidebar() {
+                main.classList.toggle("collapseMain");
+                side.classList.toggle("collapseSide");
+            }
+
+            function openUploadImg() {
+                upLoad.style.display = 'block';
+            }
+
+            function closeUploadImg() {
+                upLoad.style.display = 'none';
+            }
+
+            
         </script>

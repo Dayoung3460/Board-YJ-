@@ -116,6 +116,34 @@ require_once 'header.php';
         main.classList.toggle("collapseMain");
         side.classList.toggle("collapseSide");
     }
+
+    const darkBtn = document.querySelector('.dark-mode');
+    const body = document.querySelector('.wrapper .main-container');
+    const maintopBtn = document.querySelectorAll(".mainTop-btn");
+
+    const darkMode = ()=>{
+        body.classList.toggle('lightAndDark');
+        maintopBtn[0].classList.toggle('darkModeBtn');
+        maintopBtn[1].classList.toggle('darkModeBtn');
+        maintopBtn[2].classList.toggle('darkModeBtn');
+    }
+
+    let setDarkMode = localStorage.getItem('dark');
+
+    darkBtn.addEventListener('click', ()=>{
+        if(setDarkMode !== "on"){
+            darkMode();
+            setDarkMode = localStorage.setItem('dark', 'on');
+        } else{
+            darkMode();
+            setDarkMode = localStorage.setItem('dark', null);
+            }
+    });
+            
+    if(setDarkMode === 'on'){
+        darkMode();
+    }
+    
 </script>
 
 <?php
