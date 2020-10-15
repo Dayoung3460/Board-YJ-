@@ -1,6 +1,6 @@
 ### PHP Website
 
-[website](http://http://www.kdfljmyu.site)
+[website](http://www.kdfljmyu.site)
 
 * HTML
 * CSS
